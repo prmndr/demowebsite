@@ -25,6 +25,7 @@ concurrency:
 jobs:
   # Job for running Selenium tests
   test:
+    needs: sonarcloud
     runs-on: ubuntu-latest  # Runs on Ubuntu environment
 
     # Steps to execute within the job
@@ -70,7 +71,6 @@ jobs:
   sonarcloud:
     name: SonarCloud
     runs-on: ubuntu-latest
-    needs: test
     steps:
       - uses: actions/checkout@v3
         with:
@@ -84,7 +84,7 @@ jobs:
   # Job for deploying to GitHub Pages
   deploy:
     # Depends on completion of the 'test' job
-    needs: sonarcloud
+    needs: test
 
     # Define the environment for deployment
     environment:
