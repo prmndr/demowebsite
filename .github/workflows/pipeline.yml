@@ -78,7 +78,7 @@ jobs:
       uses: sonarsource/sonarcloud-github-action@master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        SONAR_TOKEN: a3585af10cce0207e19543cf651bc129831eecb8
 
   # Job for deploying to GitHub Pages
   deploy:
