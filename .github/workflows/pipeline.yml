@@ -70,6 +70,7 @@ jobs:
   sonarcloud:
     name: SonarCloud
     runs-on: ubuntu-latest
+    needs: test
     steps:
       - uses: actions/checkout@v3
         with:
@@ -83,7 +84,7 @@ jobs:
   # Job for deploying to GitHub Pages
   deploy:
     # Depends on completion of the 'test' job
-    needs: test
+    needs: sonarcloud
 
     # Define the environment for deployment
     environment:
