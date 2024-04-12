@@ -19,7 +19,7 @@ permissions:
 # Controls concurrent deployments to avoid conflicts
 concurrency:
   group: "pages"  # Group for concurrency control
-  cancel-in-progress: true  # Don't cancel ongoing deployments
+  cancel-in-progress: false  # Don't cancel ongoing deployments
 
 # Define jobs to be executed
 jobs:
